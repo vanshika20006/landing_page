@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .testimonials-section {
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        align-items: center;
+        justify-content: center;
+        padding: 413px 80px;
+      }
+
+      .testimonials-container {
+        display: flex;
+        width: 100%;
+        max-width: 1078px;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .testimonials-heading {
+        color: #280a64;
+        letter-spacing: 3px;
+        text-align: center;
+        text-transform: uppercase;
+        font: 400 28px/1 Roboto, sans-serif;
+      }
+
+      .testimonials-subheading {
+        color: #000;
+        letter-spacing: -1px;
+        text-align: center;
+        margin-top: 39px;
+        font: 600 56px/1 Roboto, sans-serif;
+      }
+
+      .testimonials-grid {
+        align-self: stretch;
+        margin-top: 83px;
+      }
+
+      .testimonials-row {
+        gap: 20px;
+        display: flex;
+      }
+
+      .testimonial-column {
+        display: flex;
+        flex-direction: column;
+        line-height: normal;
+      }
+
+      .testimonial-image {
+        aspect-ratio: 0.91;
+        object-fit: contain;
+        object-position: center;
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.07);
+      }
+
+      .testimonial-image-large {
+        aspect-ratio: 0.94;
+        object-fit: contain;
+        object-position: center;
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.07);
+        flex-grow: 1;
+      }
+
+      .testimonial-image-offset {
+        margin-top: 81px;
+      }
+
+      .navigation-controls {
+        display: flex;
+        margin-top: 35px;
+        width: 322px;
+        max-width: 100%;
+        gap: 20px;
+        justify-content: space-between;
+      }
+
+      .nav-arrow {
+        aspect-ratio: 1;
+        object-fit: contain;
+        object-position: center;
+        width: 36px;
+      }
+
+      .nav-dots {
+        aspect-ratio: 10.42;
+        object-fit: contain;
+        object-position: center;
+        width: 177px;
+        max-width: 100%;
+        margin: auto 0;
+      }
+
+      @media (max-width: 991px) {
+        .testimonials-section {
+          padding: 100px 20px;
+        }
+
+        .testimonials-container {
+          max-width: 100%;
+        }
+
+        .testimonials-subheading {
+          max-width: 100%;
+          font-size: 40px;
+        }
+
+        .testimonials-grid {
+          max-width: 100%;
+          margin-top: 40px;
+        }
+
+        .testimonials-row {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 0;
+        }
+
+        .testimonial-column {
+          width: 100%;
+        }
+
+        .testimonial-image,
+        .testimonial-image-large,
+        .testimonial-image-offset {
+          margin-top: 40px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="testimonials-section">
+      <div class="testimonials-container">
+        <h2 class="testimonials-heading">Testimonials</h2>
+        <h3 class="testimonials-subheading">
+          What Our Learners have to say about us
+        </h3>
+        <div class="testimonials-grid">
+          <div class="testimonials-row">
+            <div class="testimonial-column" style="width: 29%">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/307b8d5d7f1f8929a0e98c1bd1699d0a60846299fc7c5fb18aa32534e47977da?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc"
+                alt="Testimonial 1"
+                class="testimonial-image"
+                loading="lazy"
+              />
+            </div>
+            <div class="testimonial-column" style="width: 42%">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/cc3fa7b21b3dcda70edc7584e466f2ff4a3197954ad45ea5cbed964e4fba8e5b?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc"
+                alt="Testimonial 2"
+                class="testimonial-image-large"
+                loading="lazy"
+              />
+            </div>
+            <div class="testimonial-column" style="width: 29%">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/307b8d5d7f1f8929a0e98c1bd1699d0a60846299fc7c5fb18aa32534e47977da?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc"
+                alt="Testimonial 3"
+                class="testimonial-image testimonial-image-offset"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="navigation-controls">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/e5197630b50eaa1dcc1e44f537b3a1530acdafb73f241b2a05408ebbc05b8baa?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc"
+            alt="Previous"
+            class="nav-arrow"
+            loading="lazy"
+          />
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/218bc5e7d7c9b3de820545ad89e7b7578deb0c2ae23429f3a3228806bef8a7ec?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc"
+            alt=""
+            class="nav-dots"
+            loading="lazy"
+          />
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/6288e3824eb497bcb804dac7a29f5569d4f11821e713f9f3ec2eba9c7a9a0347?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc"
+            alt="Next"
+            class="nav-arrow"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,372 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop Section</title>
+    <style>
+        .workshop-section {
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 20px;
+            max-width: 1206px;
+            margin: 0 auto;
+        }
+        .workshop-container {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+        }
+        .featured-workshop {
+            border-radius: 6px;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid rgba(0, 0, 0, 0.19);
+            margin-bottom: 36px;
+        }
+        .workshop-content {
+            display: flex;
+            gap: 20px;
+        }
+        .workshop-image {
+            aspect-ratio: 1.2;
+            object-fit: cover;
+            object-position: center;
+            width: 100%;
+            max-width: 500px;
+            border-radius: 6px;
+        }
+        .workshop-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .workshop-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .workshop-duration {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #9672ff;
+        }
+        .duration-icon {
+            width: 24px;
+            height: 24px;
+        }
+        .workshop-type {
+            background-color: rgba(150, 114, 255, 0.51);
+            padding: 8px 16px;
+            border-radius: 6px;
+            color: #3d3d3d;
+        }
+        .workshop-title {
+            color: #081f32;
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .divider {
+            height: 1px;
+            background-color: rgba(0, 0, 0, 0.19);
+            margin: 20px 0;
+        }
+        .instructor-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .instructor-profile {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .instructor-image {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .instructor-details {
+            display: flex;
+            flex-direction: column;
+        }
+        .instructor-name {
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .instructor-title {
+            font-size: 14px;
+            color: rgba(0, 0, 0, 0.48);
+        }
+        .student-count {
+            font-size: 14px;
+            color: rgba(0, 0, 0, 0.48);
+        }
+        .workshop-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .rating {
+            display: flex;
+            gap: 4px;
+        }
+        .star-icon {
+            width: 20px;
+            height: 20px;
+        }
+        .learn-more-btn {
+            background-color: #7848f4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .workshop-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .workshop-card {
+            border-radius: 6px;
+            background-color: #fff;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+        }
+        .card-image {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+        }
+        .card-content {
+            padding: 20px;
+        }
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .card-duration {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #9672ff;
+        }
+        .card-type {
+            background-color: #ff8fa5;
+            padding: 6px 12px;
+            border-radius: 6px;
+            color: #fff;
+            font-size: 12px;
+        }
+        .card-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        .card-instructor-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        .card-instructor-profile {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .card-instructor-image {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .card-instructor-details {
+            display: flex;
+            flex-direction: column;
+        }
+        .card-instructor-name {
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .card-instructor-title {
+            font-size: 12px;
+            color: rgba(0, 0, 0, 0.48);
+        }
+        .card-student-count {
+            font-size: 12px;
+            color: rgba(0, 0, 0, 0.48);
+        }
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .explore-btn {
+            background-color: #7848f4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 16px 32px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 40px;
+            align-self: center;
+        }
+        @media (max-width: 768px) {
+            .workshop-content {
+                flex-direction: column;
+            }
+            .workshop-image {
+                max-width: 100%;
+            }
+            .workshop-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            .instructor-info {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            .workshop-footer {
+                flex-direction: column;
+                gap: 16px;
+            }
+            .workshop-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="workshop-section">
+        <div class="workshop-container">
+            <article class="featured-workshop">
+                <div class="workshop-content">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f5ca796c85237435220315c0945d3efc67c6813661d1d22dbddb899723835b82?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc" class="workshop-image" alt="Featured workshop illustration" />
+                    <div class="workshop-details">
+                        <header class="workshop-header">
+                            <div class="workshop-duration">
+                                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1ebe5945cdd81c09baec78b94b6661d7cd999a1ba9bb43293aa1bcd185d9fc2e?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc" class="duration-icon" alt="" />
+                                <span>3x Days</span>
+                            </div>
+                            <div class="workshop-type">Design</div>
+                        </header>
+                        <h2 class="workshop-title">Full Stack Web Development Workshop</h2>
+                        <hr class="divider" />
+                        <div class="instructor-info">
+                            <div class="instructor-profile">
+                                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/381e988be598c959eada9d3651eafb0656fab993b60915960f7349d6d4aa2f5c?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc" class="instructor-image" alt="Instructor Akshay Mandliya" />
+                                <div class="instructor-details">
+                                    <span class="instructor-name">Akshay Mandliya</span>
+                                    <span class="instructor-title">Fullstack Developer</span>
+                                </div>
+                            </div>
+                            <div class="student-count">50+ Students</div>
+                        </div>
+                        <hr class="divider" />
+                        <footer class="workshop-footer">
+                            <div class="rating">
+                                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c8cdd63b3253d0208ab100abcfee9a7ee26a05de09f1d869951d660554d0fd97?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc" class="star-icon" alt="Star rating" />
+                                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c8cdd63b3253d0208ab100abcfee9a7ee26a05de09f1d869951d660554d0fd97?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc" class="star-icon" alt="Star rating" />
+                                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/72582dde68d9740febae3a4522f03ab262cdcf97050695f112cec56c18399bdb?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc" class="star-icon" alt="Star rating" />
+                                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/3be25fc5997cb9ee2fb20f0abb7080ee71aeb2ae87f0b7a85e07a609f75ad7d3?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc" class="star-icon" alt="Star rating" />
+                                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/3be25fc5997cb9ee2fb20f0abb7080ee71aeb2ae87f0b7a85e07a609f75ad7d3?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc" class="star-icon" alt="Star rating" />
+                            </div>
+                            <button class="learn-more-btn">Learn More</button>
+                        </footer>
+                    </div>
+                </div>
+            </article>
+            <div class="workshop-grid">
+                <article class="workshop-card">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b8ba9b73646a2d324aa6c63590f2d4b05c933977476e9c2accd8015ebe56a1b1?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc" class="card-image" alt="Workshop illustration" />
+                    <div class="card-content">
+                        <header class="card-header">
+                            <div class="card-duration">
+                                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e331e1151e2f2fcd42ab35c5fc76521d0384071ee39d1d2237aa10694d695e25?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc" class="duration-icon" alt="" />
+                                <span>3x Days</span>
+                            </div>
+                            <div class="card-type">Design</div>
+                        </header>
+                        <h3 class="card-title">Full Stack Web Development Workshop</h3>
+                        <div class="card-instructor-info">
+                            <div class="card-instructor-profile">
+                                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/5f95788e5be24d067d219bf6f4229e1c928fd808e1b4d7276d5f169bbbe36c18?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc" class="card-instructor-image" alt="Instructor Akshay Mandliya" />
+                                <div class="card-instructor-details">
+                                    <span class="card-instructor-name">Akshay Mandliya</span>
+                                    <span class="card-instructor-title">Fullstack Developer</span>
+                                </div>
+                            </div>
+                            <div class="card-student-count">50+ Students</div>
+                        </div>
+                        <hr class="divider" />
+                        <footer class="card-footer">
+                            <div class="rating">
+                                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4b8725b118ea259568cc2f8e498cc7b1d4b206f5d3ae71b0b54809bcba3507d4?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc" class="star-icon" alt="Star rating" />
+                                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4b8725b118ea259568cc2f8e498cc7b1d4b206f5d3ae71b0b54809bcba3507d4?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc" class="star-icon" alt="Star rating" />
+                                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4b8725b118ea259568cc2f8e498cc7b1d4b206f5d3ae71b0b54809bcba3507d4?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc" class="star-icon" alt="Star rating" />
+                                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/5a3b0ec3dab84d197318c2e768483b07cb9f8454a602200d54c3a87ff12d9de9?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc" class="star-icon" alt="Star rating" />
+                                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/5a3b0ec3dab84d197318c2e768483b07cb9f8454a602200d54c3a87ff12d9de9?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc" class="star-icon" alt="Star rating" />
+                            </div>
+                            <button class="learn-more-btn">Learn More</button>
+                        </footer>
+                    </div>
+                </article>
+                <article class="workshop-card">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/169928841ea2f9e24adf148301c4e7c53ca4a32906b4365c29951a6e209f6315?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc" class="card-image" alt="Workshop illustration" />
+                    <div class="card-content">
+                        <header class="card-header">
+                            <div class="card-duration">
+                                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e331e1151e2f2fcd42ab35c5fc76521d0384071ee39d1d2237aa10694d695e25?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc" class="duration-icon" alt="" />
+                                <span>3x Days</span>
+                            </div>
+                            <div class="card-type">Design</div>
+                        </header>
+                        <h3 class="card-title">Full Stack Web Development Workshop</h3>
+                        <div class="card-instructor-info">
+                            <div class="card-instructor-profile">
+                                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/5f95788e5be24d067d219bf6f4229e1c928fd808e1b4d7276d5f169bbbe36c18?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc" class="card-instructor-image" alt="Instructor Akshay Mandliya" />
+                                <div class="card-instructor-details">
+                                    <span class="card-instructor-name">Akshay Mandliya</span>
+                                    <span class="card-instructor-title">Fullstack Developer</span>
+                                </div>
+                            </div>
+                            <div class="card-student-count">50+ Students</div>
+                        </div>
+                        <hr class="divider" />
+                        <footer class="card-footer">
+                            <div class="rating">
+                                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4b8725b118ea259568cc2f8e498cc7b1d4b206f5d3ae71b0b54809bcba3507d4?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc" class="star-icon" alt="Star rating" />
+                                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4b8725b118ea259568cc2f8e498cc7b1d4b206f5d3ae71b0b54809bcba3507d4?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc" class="star-icon" alt="Star rating" />
+                                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4b8725b118ea259568cc2f8e498cc7b1d4b206f5d3ae71b0b54809bcba3507d4?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc" class="star-icon" alt="Star rating" />
+                                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/5a3b0ec3dab84d197318c2e768483b07cb9f8454a602200d54c3a87ff12d9de9?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc" class="star-icon" alt="Star rating" />
+                                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/5a3b0ec3dab84d197318c2e768483b07cb9f8454a602200d54c3a87ff12d9de9?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc" class="star-icon" alt="Star rating" />
+                            </div>
+                            <button class="learn-more-btn">Learn More</button>
+                        </footer>
+                    </div>
+                </article>
+            </div>
+            <button class="explore-btn">Explore All Workshops....</button>
+        </div>
+    </section>
+</body>
+</html>

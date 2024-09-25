@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Section</title>
+    <style>
+      .landing-section {
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        padding: 30px 44px 492px;
+      }
+      .hero-image {
+        aspect-ratio: 1.41;
+        object-fit: contain;
+        object-position: center;
+        width: 100%;
+      }
+      @media (max-width: 991px) {
+        .landing-section {
+          padding: 0 20px 100px;
+        }
+        .hero-image {
+          max-width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="landing-section">
+      <img
+        loading="lazy"
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/2e7db247e7cd358542c2d388dc359c83ff870232598f74cfbd64627f50dac75f?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc"
+        class="hero-image"
+        alt="Landing page hero image"
+      />
+    </section>
+  </body>
+</html>

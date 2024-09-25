@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explore Trainings and Bootcamps</title>
+    <style>
+      .explore-trainings {
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        align-items: start;
+        padding: 80px 20px;
+        max-width: 1440px;
+        margin: 0 auto;
+      }
+
+      .section-title {
+        color: #000;
+        letter-spacing: -1px;
+        font: 600 56px/72px Roboto, sans-serif;
+        margin-bottom: 40px;
+      }
+
+      .courses-container {
+        width: 100%;
+        max-width: 1278px;
+      }
+
+      .courses-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+      }
+
+      .course-column {
+        flex: 1 1 300px;
+        max-width: 400px;
+        margin-bottom: 20px;
+      }
+
+      .course-card {
+        border-radius: 6px;
+        background-color: #fff;
+        box-shadow: 0 10px 50px rgba(61, 55, 241, 0.25);
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border: 1px solid rgba(0, 0, 0, 0.19);
+        overflow: hidden;
+      }
+
+      .course-image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 6px 6px 0 0;
+      }
+
+      .course-content {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+      }
+
+      .course-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .course-duration {
+        display: flex;
+        align-items: center;
+        color: #9672ff;
+        font: 400 14px/1.5 Roboto, sans-serif;
+      }
+
+      .duration-icon {
+        width: 18px;
+        height: 18px;
+        margin-right: 8px;
+      }
+
+      .course-type {
+        background-color: rgba(150, 114, 255, 0.51);
+        color: #fff;
+        padding: 5px 15px;
+        border-radius: 6px;
+        font: 400 14px/1.5 Roboto, sans-serif;
+      }
+
+      .course-title {
+        color: #081f32;
+        font: 600 22px/1.3 Roboto, sans-serif;
+        margin-bottom: 15px;
+      }
+
+      .divider {
+        height: 1px;
+        background-color: rgba(0, 0, 0, 0.19);
+        margin: 15px 0;
+      }
+
+      .instructor-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .instructor-profile {
+        display: flex;
+        align-items: center;
+      }
+
+      .instructor-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+
+      .instructor-details {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .instructor-name {
+        color: #000;
+        font: 600 14px/1.5 Roboto, sans-serif;
+      }
+
+      .instructor-title {
+        color: rgba(0, 0, 0, 0.48);
+        font: 300 12px/1.5 Roboto, sans-serif;
+      }
+
+      .student-count {
+        color: rgba(0, 0, 0, 0.48);
+        font: 300 12px/1.5 Roboto, sans-serif;
+      }
+
+      .course-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 15px;
+      }
+
+      .rating {
+        display: flex;
+      }
+
+      .star-icon {
+        width: 16px;
+        height: 16px;
+        margin-right: 2px;
+      }
+
+      .learn-more-btn {
+        background-color: #7848f4;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font: 400 14px Roboto, sans-serif;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .learn-more-btn:hover,
+      .learn-more-btn:focus {
+        background-color: #6a3ad6;
+      }
+
+      .explore-all-btn {
+        display: block;
+        width: 200px;
+        margin: 40px auto 0;
+        background-color: #7848f4;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 15px 30px;
+        font: 400 16px Roboto, sans-serif;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .explore-all-btn:hover,
+      .explore-all-btn:focus {
+        background-color: #6a3ad6;
+      }
+
+      @media (max-width: 768px) {
+        .section-title {
+          font-size: 40px;
+          line-height: 1.2;
+        }
+
+        .course-column {
+          flex-basis: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="explore-trainings">
+      <h2 class="section-title">
+        Explore <br />
+        Trainings and Bootcamps
+      </h2>
+      <div class="courses-container">
+        <div class="courses-grid">
+          <article class="course-column">
+            <div class="course-card">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/c81c5f113982b4413d02b60a6419c9bac01e61323ee78c7a6aa29a080e27cbfe?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc"
+                alt="Full Stack Web Development Workshop"
+                class="course-image"
+              />
+              <div class="course-content">
+                <div class="course-meta">
+                  <div class="course-duration">
+                    <img
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/e4558e7cd49cfc1e6a8adf9e9308b76d28ce816334b087d24b017b379a07e080?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc"
+                      alt=""
+                      class="duration-icon"
+                    />
+                    <span>8 Weeks</span>
+                  </div>
+                  <div class="course-type">Design</div>
+                </div>
+                <h3 class="course-title">
+                  Full Stack Web Development Workshop
+                </h3>
+                <hr class="divider" />
+                <div class="instructor-info">
+                  <div class="instructor-profile">
+                    <img
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/fa5767512d3d77c42598fb2c2ad20dc7745ca3661ab7a5c906690daf86aee3fa?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc"
+                      alt="Akshay Mandliya"
+                      class="instructor-avatar"
+                    />
+                    <div class="instructor-details">
+                      <span class="instructor-name">Akshay Mandliya</span>
+                      <span class="instructor-title">Fullstack Developer</span>
+                    </div>
+                  </div>
+                  <div class="student-count">50+ Students</div>
+                </div>
+                <hr class="divider" />
+                <div class="course-footer">
+                  <div class="rating">
+                    <img
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/e21f1e1c95ddf77361f27be7304f5c62956821f9767fc925077e2cecf0732e05?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc"
+                      alt="Star"
+                      class="star-icon"
+                    />
+                    <img
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/e21f1e1c95ddf77361f27be7304f5c62956821f9767fc925077e2cecf0732e05?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc"
+                      alt="Star"
+                      class="star-icon"
+                    />
+                    <img
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/e21f1e1c95ddf77361f27be7304f5c62956821f9767fc925077e2cecf0732e05?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc"
+                      alt="Star"
+                      class="star-icon"
+                    />
+                    <img
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/cb3dff209b4e6a9b8d38c26e7fc235b9be70f44fdc038987e6f686c7db6d8ef8?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc"
+                      alt="Star"
+                      class="star-icon"
+                    />
+                    <img
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/cb3dff209b4e6a9b8d38c26e7fc235b9be70f44fdc038987e6f686c7db6d8ef8?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc"
+                      alt="Star"
+                      class="star-icon"
+                    />
+                  </div>
+                  <button class="learn-more-btn">Learn More</button>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="course-column">
+            <div class="course-card">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/42d527b0bc75c45c711b530ab425b51f6e35653136436188f6ce2ca5ee7a4d07?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc"
+                alt="Full Stack Web Development Workshop"
+                class="course-image"
+              />
+              <div class="course-content">
+                <div class="course-meta">
+                  <div class="course-duration">
+                    <img
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/ad715812829aab65b9937cf173ae70b1e54e97af5d0309b52ddedcb7a5cb988b?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc"
+                      alt=""
+                      class="duration-icon"
+                    />
+                    <span>8 Weeks</span>
+                  </div>
+                  <div class="course-type">Design</div>
+                </div>
+                <h3 class="course-title">
+                  Full Stack Web Development Workshop
+                </h3>
+                <hr class="divider" />
+                <div class="instructor-info">
+                  <div class="instructor-profile">
+                    <img
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/b3e2e5516dca84b596279b18e198135a26b4e65d9c9435d0650816f09f90492a?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc"
+                      alt="Akshay Mandliya"
+                      class="instructor-avatar"
+                    />
+                    <div class="instructor-details">
+                      <span class="instructor-name">Akshay Mandliya</span>
+                      <span class="instructor-title">Fullstack Developer</span>
+                    </div>
+                  </div>
+                  <div class="student-count">50+ Students</div>
+                </div>
+                <hr class="divider" />
+                <div class="course-footer">
+                  <div class="rating">
+                    <img
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/e21f1e1c95ddf77361f27be7304f5c62956821f9767fc925077e2cecf0732e05?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc"
+                      alt="Star"
+                      class="star-icon"
+                    />
+                    <img
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/e21f1e1c95ddf77361f27be7304f5c62956821f9767fc925077e2cecf0732e05?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc"
+                      alt="Star"
+                      class="star-icon"
+                    />
+                    <img
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/e21f1e1c95ddf77361f27be7304f5c62956821f9767fc925077e2cecf0732e05?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc"
+                      alt="Star"
+                      class="star-icon"
+                    />
+                    <img
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/cb3dff209b4e6a9b8d38c26e7fc235b9be70f44fdc038987e6f686c7db6d8ef8?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc"
+                      alt="Star"
+                      class="star-icon"
+                    />
+                    <img
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/cb3dff209b4e6a9b8d38c26e7fc235b9be70f44fdc038987e6f686c7db6d8ef8?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc"
+                      alt="Star"
+                      class="star-icon"
+                    />
+                  </div>
+                  <button class="learn-more-btn">Learn More</button>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="course-column">
+            <div class="course-card">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/67046aee1c391b45cbc5d8b46cd9746f0b5b06ab1e03517c22664bc9c7aae5e9?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc"
+                alt="Full Stack Web Development Workshop"
+                class="course-image"
+              />
+              <div class="course-content">
+                <div class="course-meta">
+                  <div class="course-duration">
+                    <img
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/3be5d5ca6a341dcca709e7a71d26ddc63aa6fde5ccd6306a5e95d2a339c09591?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc"
+                      alt=""
+                      class="duration-icon"
+                    />
+                    <span>8 Weeks</span>
+                  </div>
+                  <div class="course-type">Design</div>
+                </div>
+                <h3 class="course-title">
+                  Full Stack Web Development Workshop
+                </h3>
+                <hr class="divider" />
+                <div class="instructor-info">
+                  <div class="instructor-profile">
+                    <img
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/6fb4565777d4cafa9294d63d00bd686b0b8b50193f4ef4636bcb65669f579dfb?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc"
+                      alt="Akshay Mandliya"
+                      class="instructor-avatar"
+                    />
+                    <div class="instructor-details">
+                      <span class="instructor-name">Akshay Mandliya</span>
+                      <span class="instructor-title">Fullstack Developer</span>
+                    </div>
+                  </div>
+                  <div class="student-count">50+ Students</div>
+                </div>
+                <hr class="divider" />
+                <div class="course-footer">
+                  <div class="rating">
+                    <img
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/e21f1e1c95ddf77361f27be7304f5c62956821f9767fc925077e2cecf0732e05?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc"
+                      alt="Star"
+                      class="star-icon"
+                    />
+                    <img
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/e21f1e1c95ddf77361f27be7304f5c62956821f9767fc925077e2cecf0732e05?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc"
+                      alt="Star"
+                      class="star-icon"
+                    />
+                    <img
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/e21f1e1c95ddf77361f27be7304f5c62956821f9767fc925077e2cecf0732e05?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc"
+                      alt="Star"
+                      class="star-icon"
+                    />
+                    <img
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/cb3dff209b4e6a9b8d38c26e7fc235b9be70f44fdc038987e6f686c7db6d8ef8?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc"
+                      alt="Star"
+                      class="star-icon"
+                    />
+                    <img
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/cb3dff209b4e6a9b8d38c26e7fc235b9be70f44fdc038987e6f686c7db6d8ef8?placeholderIfAbsent=true&apiKey=15558e77713a44ddb666ebdba45364bc"
+                      alt="Star"
+                      class="star-icon"
+                    />
+                  </div>
+                  <button class="learn-more-btn">Learn More</button>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+      <button class="explore-all-btn">Explore All....</button>
+    </section>
+  </body>
+</html>
